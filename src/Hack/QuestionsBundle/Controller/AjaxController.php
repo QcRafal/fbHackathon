@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use Hack\QuestionsBundle\Entity\Answer;
+
 /**
  * @Route("/ajax")
  */
@@ -17,7 +19,7 @@ class AjaxController extends Controller
      */
     public function addAction()
     {
-      
+      return array(true);
     }
     
     /**
@@ -26,6 +28,6 @@ class AjaxController extends Controller
      */
     public function answerAction()
     {
-      
+      return array(true);
     }
 }
