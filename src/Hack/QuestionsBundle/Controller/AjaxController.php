@@ -6,19 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
-class DefaultController extends Controller
+/**
+ * @Route("/ajax")
+ */
+class AjaxController extends Controller
 {
     /**
-     * @Route("/")
-     * @Template()
-     */
-    public function indexAction()
-    {
-        return array('name' => 'aha');
-    }
-    
-    /**
-     * @Route("/answer")
+     * @Route("/add")
      * @Template()
      */
     public function addAction()
@@ -27,11 +21,11 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/badges")
+     * @Route("/answer")
      * @Template()
      */
     public function answerAction()
     {
-       
+      
     }
 }
