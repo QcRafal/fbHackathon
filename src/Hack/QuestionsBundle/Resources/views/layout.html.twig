@@ -15,8 +15,10 @@
   {% endblock %}
   <script type="text/javascript" charset="utf-8" src="http://connect.facebook.net/en_US/all.js"></script>
   <script type="text/javascript" charset="utf-8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+  {{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
   <script>
-  FB.init({appId: "345952102165542", status: true, cookie: true});
+
+  {#FB.init({appId: "345952102165542", status: true, cookie: true});#}
   
     function goLogIn(){
         window.location = "{{ path('_security_check') }}";
@@ -71,7 +73,7 @@
 </head>
 <body>
   <div id='fb-root'></div>
-     
+  {{ facebook_login_button({'autologoutlink': true}) }}
   <div id="container">
     <div id="page">   
       {% block body %}{% endblock %}

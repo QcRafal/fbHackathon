@@ -19,7 +19,7 @@ class AjaxController extends Controller
      */
     public function addAction()
     {
-      return array(true);
+      return ;
     }
     
     /**
