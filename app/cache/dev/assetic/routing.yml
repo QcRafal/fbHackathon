@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: /Users/rafakuc/Sites/fbHackathon/app/config/routing_dev.yml
+    resource: /Library/WebServer/Documents/fbhackathon/app/config/routing_dev.yml
