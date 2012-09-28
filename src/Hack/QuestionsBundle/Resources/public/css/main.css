@@ -119,6 +119,7 @@ a:visited {color: inherit;}
           top: 150px;
           position: relative;
           right: -330px;
+          cursor: pointer;
 }
 .left.active header {
   -webkit-transform: rotate(0deg); 
@@ -146,6 +147,7 @@ a:visited {color: inherit;}
           top: 35px;
           position: relative;
           left: -330px;
+          cursor: pointer;
 }
 .right header h2 {
   display:none;
@@ -266,7 +268,7 @@ textarea, input { outline: none; }
   text-align:right;
 }
 #page #top #badges ul li {
-  float: left;
+  float: right;
   margin: 2px 4px;
   opacity: 0.5;
   -moz-opacity: 0.5;
