@@ -34,8 +34,8 @@ app/bootstrap*
 
 # Symfony2 directories
 vendor/*
-*/logs/*
-*/cache/*
+app/logs/*
+app/cache/*
 web/uploads/*
 web/bundles/*
 
