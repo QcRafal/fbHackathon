@@ -64,9 +64,9 @@ fos_user:
     user_class: Hack\QuestionsBundle\Entity\User
 
 fos_facebook:
-      file:   %kernel.root_dir%/../vendor/facebook/php-sdk/src/base_facebook.php
-      alias:  facebook
-      app_id: 345952102165542
-      secret: c7581e2a9b65ba74d174ef39ada98f0b
-      cookie: true
-      permissions: [email, user_birthday, user_location]
+    file:   %kernel.root_dir%/../vendor/facebook/php-sdk/src/base_facebook.php
+    alias:  facebook
+    app_id: 345952102165542
+    secret: c7581e2a9b65ba74d174ef39ada98f0b
+    cookie: true
+    permissions: [email, user_birthday, user_location]
