@@ -18,10 +18,10 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/answer")
+     * @Route("/answer/{id}")
      * @Template()
      */
-    public function addAction()
+    public function addAction($id)
     {
       
     }
@@ -33,5 +33,13 @@ class DefaultController extends Controller
     public function answerAction()
     {
        
+    }
+    
+    /**
+     * @Template()
+     */
+    public function rankpaneAction()
+    {
+      return array('name'=>'name');
     }
 }
