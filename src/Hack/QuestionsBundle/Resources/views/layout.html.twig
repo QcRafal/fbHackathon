@@ -13,8 +13,11 @@
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
   {% endblock %}
+  <script type="text/javascript" charset="utf-8" src="http://connect.facebook.net/en_US/all.js"></script>
   <script type="text/javascript" charset="utf-8" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
   <script>
+  FB.init({appId: "345952102165542", status: true, cookie: true});
+  
     function goLogIn(){
         window.location = "{{ path('_security_check') }}";
     }
@@ -26,9 +29,49 @@
             });
         }
     }
+    
+    function sendQuestion() {
+            FB.ui(
+                    {
+                            method: 'feed',
+                            link: 'https://fbdev.wp.pl/test/test2.html?q=143',
+                            name: 'What\'s the name of the founder of Facebook?',
+                            actions: [
+                                    { name: 'Answer the question', link:
+    'https://fbdev.wp.pl/test/test2.html?q=143' }
+                            ],
+                            picture: 'http://www.allthetests.com/quiz30/picture/pic_1340843878_6.jpg'
+                    }, function(response) {
+                            console.log(response);
+                    }
+            );
+    }
+
+    function postScore() {
+            FB.api('/me/scores?score=12&access_token=AAAE6pEAorCYBALv3E6RBotZC0QU6zr88oZBKNbqZCtRUVfTS1mY9ga8G0ptI5Y0AtuNzZAvBjuRwyjiueeanA8ZAMoxPCutUvaiCFzdgqdoirubvkqPBD',
+    function(response) {
+                    console.log(response);
+            })
+    }
+
+    function prepareAchievement() {
+            FB.api('/345952102165542/achievements?achievement=http://fbdev.wp.pl/test/achievement1.html&display_order=1&access_token=410330862349089|kuRvAp6d8vYqblbOVdWCp1qRayU',
+    function(response) {
+                    console.log(response);
+            })
+    }
+
+    function postAchievement() {
+            FB.api('/100000443234558/achievements?achievement=http://fbdev.wp.pl/test/achievement1.html&access_token=AAAF1MZAlKayEBAJcl9XVVRsbMUtJcnEu7AMKLY9L98pEp0VQrnKzoO9sBZClEI48tE0Kr2lxQzwHSKS7ZCsJcpJqrOIkCyus2FY0uBWAEIx8fi50Wze',
+    function(response) {
+                    console.log(response);
+            })
+    }
   </script>
 </head>
-<body>   
+<body>
+  <div id='fb-root'></div>
+     
   <div id="container">
     <div id="page">   
       {% block body %}{% endblock %}
@@ -40,6 +83,7 @@
   {% block javascripts %}
     {% javascripts '@HackQuestionsBundle/Resources/public/js/hoverIntent.js'
                    '@HackQuestionsBundle/Resources/public/js/main.js'
+                   '@HackQuestionsBundle/Resources/public/js/fb.js'
     
     %}
      <script type="text/javascript" src="{{ asset_url }}"></script>

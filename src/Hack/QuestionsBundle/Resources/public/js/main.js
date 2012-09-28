@@ -5,7 +5,9 @@ $(document).ready(function () {
     return;
   });
   $(".askpane input[type=submit]").click(function () {
-    $.post("/questions/ajax/add", { question: $(".askpane input#question").attr('value') , answer: $(".askpane input#answer").attr('value') },
+    $.post("/app_dev.php/questions/ajax/add", { 
+      question: $(".askpane input#question").attr('value') , 
+      answer: $(".askpane input#answer").attr('value') },
       function(data) {
         alert("kthx");
       }
@@ -13,7 +15,9 @@ $(document).ready(function () {
   });
   
   $(".answerpane input[type=submit]").click(function () {
-    $.post("/questions/ajax/answer", { question_id: $(".askpane input#question_id").attr('value') , answer: $(".askpane input#answer").attr('value') },
+    $.post("/app_dev.php/questions/ajax/answer", { 
+      question_id: $(".askpane input#question_id").attr('value') , 
+      answer: $(".askpane input#answer").attr('value') },
       function(data) {
         alert(data.is_good);
       }

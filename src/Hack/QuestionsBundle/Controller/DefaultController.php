@@ -29,12 +29,17 @@ class DefaultController extends Controller
     }
     
     /**
-     * @Route("/badges")
+     * @Route("/badge/{id}")
      * @Template()
      */
-    public function answerAction()
+    public function bagdeAction()
     {
-       
+       return array(
+         'url' => 'https://endodev.vipserv.org/app_dev.php/questions/badge/1', 
+         'name' => 'Pierwsze osiągnięcie pana Mietka', 
+         'description' => 'no przeciez mówię, że pierwsze...', 
+         'image' => 'http://placekitten.com/g/32/32', 
+         'app_id' => 1235,  );
     }
     
     /**
